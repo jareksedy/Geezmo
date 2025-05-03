@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseAnalytics
 
 struct PreferencesView: View {
-    @ObservedObject var viewModel: MainViewModel
+    @State var viewModel: MainViewModel
 
     @State private var enterIpAlertShown: Bool = false
     @State private var isClearAlertShown: Bool = false
@@ -147,7 +147,7 @@ struct PreferencesView: View {
                 Button(Strings.General.cancel, role: .cancel, action: {})
             }
             .onAppear {
-                viewModel.navigateToDeviceDiscoveryViewIfNeeded(.fromPreferences)
+                //viewModel.navigateToDeviceDiscoveryViewIfNeeded(.fromPreferences)
                 Analytics.logEvent(AnalyticsEvents.PreferencesView.preferencesViewStarted.rawValue, parameters: nil)
             }
         }

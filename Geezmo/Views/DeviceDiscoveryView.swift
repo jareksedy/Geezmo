@@ -10,7 +10,7 @@ import ActivityIndicatorView
 import FirebaseAnalytics
 
 struct DeviceDiscoveryView: View {
-    @ObservedObject var viewModel: MainViewModel
+    @State var viewModel: MainViewModel
     @State private var animateSymbol: Bool = false
     var body: some View {
         VStack {

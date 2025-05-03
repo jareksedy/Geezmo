@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ToastSheetView: View {
-    @ObservedObject var viewModel: MainViewModel
+    var viewModel: MainViewModel
 
     @State var startTime = Date.now
     @State var secondsElapsed: Int = 0

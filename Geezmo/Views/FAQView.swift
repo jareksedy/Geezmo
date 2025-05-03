@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseAnalytics
 
 struct FAQView: View {
-    @ObservedObject var viewModel: MainViewModel
+    @State var viewModel: MainViewModel
 
     var body: some View {
         ScrollView {
@@ -38,7 +38,7 @@ struct FAQView: View {
             
             Spacer()
         }
-        .environmentObject(viewModel)
+        .environment(viewModel)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(uiColor: .systemGray6))
         .navigationBarBackButtonHidden(true)
@@ -64,7 +64,7 @@ struct FAQView: View {
 }
 
 struct FAQDisclosureStyle: DisclosureGroupStyle {
-    @EnvironmentObject var viewModel: MainViewModel
+    @Environment(MainViewModel.self) private var viewModel
 
     func makeBody(configuration: Configuration) -> some View {
         VStack(alignment: .leading) {

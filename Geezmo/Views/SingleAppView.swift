@@ -11,7 +11,7 @@ import FirebaseAnalytics
 
 struct SingleAppView: View {
     let app: WebOSResponseApplication
-    @ObservedObject var viewModel: MainViewModel
+    var viewModel: MainViewModel
 
     var body: some View {
         VStack {
@@ -31,7 +31,7 @@ struct SingleAppView: View {
 
 struct AccentButtonStyle: ButtonStyle {
     var app: WebOSResponseApplication
-    @ObservedObject var viewModel: MainViewModel
+    var viewModel: MainViewModel
     func makeBody(configuration: Configuration) -> some View {
         VStack {
             Circle()

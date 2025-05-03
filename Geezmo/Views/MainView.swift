@@ -10,7 +10,7 @@ import FirebaseAnalytics
 
 struct MainView: View {
     @Environment(\.scenePhase) var scenePhase
-    @ObservedObject var viewModel: MainViewModel
+    @State var viewModel: MainViewModel
 
     var body: some View {
         NavigationStack {
@@ -21,18 +21,18 @@ struct MainView: View {
                     if viewModel.preferencesAlternativeView {
                         if viewModel.colorButtonsPresented {
                             ButtonGroupColorAlternativeView()
-                                .environmentObject(viewModel)
+                                .environment(viewModel)
                         } else {
                             ButtonGroupDefaultAlternativeView()
-                                .environmentObject(viewModel)
+                                .environment(viewModel)
                         }
                     } else {
                         if viewModel.colorButtonsPresented {
                             ButtonGroupColorView()
-                                .environmentObject(viewModel)
+                                .environment(viewModel)
                         } else {
                             ButtonGroupDefaultView()
-                                .environmentObject(viewModel)
+                                .environment(viewModel)
                         }
                     }
 

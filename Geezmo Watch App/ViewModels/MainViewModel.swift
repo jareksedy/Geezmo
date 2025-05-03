@@ -9,18 +9,16 @@ import SwiftUI
 import WatchConnectivity
 import WebOSClient
 
-final class MainViewModel: NSObject, ObservableObject {
-    @Published var isConnected: Bool = false
-    @Published var isMuted: Bool = false
-    @Published var isScreenOff: Bool = false
-    @Published var tvVolumeLevel: Double = 0
-    @Published var isVolumeViewPresented: Bool = false
-    @Published var preferencesAlternativeView: Bool = AppSettings.shared.watchAlternativeView {
+@Observable final class MainViewModel: NSObject, ObservableObject {
+    var isConnected: Bool = false
+    var isMuted: Bool = false
+    var isScreenOff: Bool = false
+    var preferencesAlternativeView: Bool = AppSettings.shared.watchAlternativeView {
         didSet {
             AppSettings.shared.watchAlternativeView = preferencesAlternativeView
         }
     }
-    @Published var preferencesHapticFeedback: Bool = AppSettings.shared.watchHaptics {
+    var preferencesHapticFeedback: Bool = AppSettings.shared.watchHaptics {
         didSet {
             AppSettings.shared.watchHaptics = preferencesHapticFeedback
         }
@@ -77,10 +75,6 @@ extension MainViewModel {
             }
         }
     }
-
-    func presentVolumeView() {
-        isVolumeViewPresented = true
-    }
 }
 
 extension MainViewModel: WCSessionDelegate {
@@ -98,11 +92,6 @@ extension MainViewModel: WCSessionDelegate {
         _ session: WCSession,
         didReceiveMessage message: [String: Any]
     ) {
-        if let volume = message["volumeChanged"] as? Double {
-            Task { @MainActor in
-                tvVolumeLevel = volume
-            }
-        }
         if let muteState = message[.muteState] as? Bool {
             Task { @MainActor in
                 isMuted = muteState

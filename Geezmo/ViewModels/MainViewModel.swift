@@ -15,41 +15,40 @@ private enum Constants {
     static let volumeSubscriptionRequestId = "volumeSubscription"
 }
 
-final class MainViewModel: NSObject, ObservableObject {
-    @Published var isDiscoverDevicesActivityIndicatorShown: Bool = true
-    @Published var isAppsLoadingActivityIndicatorShown: Bool = true
-    @Published var isAlertPresented: Bool = false
-    @Published var alertConfiguration: AlertConfiguration?
-    @Published var isToastPresented: Bool = false
-    @Published var toastConfiguration: ToastConfiguration?
-    @Published var colorButtonsPresented: Bool = false
-    @Published var playState: String?
-    @Published var deviceDiscoveryFinished: Bool = false
-    @Published var keyboardPresented: Bool = false
-    @Published var pinPadPresented: Bool = false
-    @Published var pairingCode: String? = nil
-    @Published var isFocused: Bool = false
-    @Published var isMuted: Bool = false
-    @Published var isScreenOff: Bool = false
-    @Published var isConnected: Bool = false
-    @Published var preferencesPresented: Bool = false
-    @Published var appListPresented: Bool = false
-    @Published var devices = Set<DeviceData>()
-    @Published var loadingAppsFinished: Bool = false
-    @Published var apps = [WebOSResponseApplication]()
-    @Published var navigationPath = [NavigationScreens]()
-    @Published var preferencesAlternativeView: Bool = AppSettings.shared.phoneAlternativeView {
+@Observable final class MainViewModel: NSObject {
+    var isDiscoverDevicesActivityIndicatorShown: Bool = true
+    var isAppsLoadingActivityIndicatorShown: Bool = true
+    var isAlertPresented: Bool = false
+    var alertConfiguration: AlertConfiguration?
+    var isToastPresented: Bool = false
+    var toastConfiguration: ToastConfiguration?
+    var colorButtonsPresented: Bool = false
+    var playState: String?
+    var deviceDiscoveryFinished: Bool = false
+    var keyboardPresented: Bool = false
+    var pinPadPresented: Bool = false
+    var pairingCode: String? = nil
+    var isFocused: Bool = false
+    var isMuted: Bool = false
+    var isScreenOff: Bool = false
+    var isConnected: Bool = false
+    var preferencesPresented: Bool = false
+    var appListPresented: Bool = false
+    var devices = Set<DeviceData>()
+    var loadingAppsFinished: Bool = false
+    var apps = [WebOSResponseApplication]()
+    var navigationPath = [NavigationScreens]()
+    var preferencesAlternativeView: Bool = AppSettings.shared.phoneAlternativeView {
         didSet {
             AppSettings.shared.phoneAlternativeView = preferencesAlternativeView
         }
     }
-    @Published var preferencesHapticFeedback: Bool = AppSettings.shared.phoneHaptics {
+    var preferencesHapticFeedback: Bool = AppSettings.shared.phoneHaptics {
         didSet {
             AppSettings.shared.phoneHaptics = preferencesHapticFeedback
         }
     }
     
-    @Published
     var faqItems: [FAQItem] = [
         FAQItem(question: Strings.FAQ.q1, answer: Strings.FAQ.a1, isExpanded: true),
         FAQItem(question: Strings.FAQ.q2, answer: Strings.FAQ.a2, isExpanded: true),

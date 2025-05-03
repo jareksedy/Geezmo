@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NavigationView: View {
-    @EnvironmentObject var viewModel: MainViewModel
+    @Environment(MainViewModel.self) private var viewModel
 
     var body: some View {
         NavigationStack {

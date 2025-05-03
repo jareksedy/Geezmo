@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct KeyButton: View {
-    @EnvironmentObject var viewModel: MainViewModel
+    @Environment(MainViewModel.self) private var viewModel
     var type: KeyButtonType
     var body: some View {
         Button(action: {
@@ -27,7 +27,7 @@ struct KeyButton: View {
 }
 
 struct KeyButtonStyle: ButtonStyle {
-    @EnvironmentObject var viewModel: MainViewModel
+    @Environment(MainViewModel.self) private var viewModel
     @State private var isBeingPressed: Bool = false
     @State private var isColorChanged: Bool = false
     var type: KeyButtonType

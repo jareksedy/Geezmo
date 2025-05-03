@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseAnalytics
 
 struct AboutView: View {
-    @ObservedObject var viewModel: MainViewModel
+    var viewModel: MainViewModel
     @State private var animateSymbol: Bool = false
     
     var body: some View {

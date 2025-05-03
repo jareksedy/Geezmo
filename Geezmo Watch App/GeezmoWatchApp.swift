@@ -11,8 +11,7 @@ import SwiftUI
 struct GeezmoWatchApp: App {
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            MainTabView(viewModel: MainViewModel())
         }
-        .environmentObject(MainViewModel())
     }
 }

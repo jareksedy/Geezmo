@@ -66,7 +66,6 @@
 		CA667AF62C49361C007E8F87 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA667AF52C49361C007E8F87 /* NavigationView.swift */; };
 		CA667AF82C493655007E8F87 /* PlaybackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA667AF72C493655007E8F87 /* PlaybackView.swift */; };
 		CA667AFA2C493696007E8F87 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA667AF92C493696007E8F87 /* PreferencesView.swift */; };
-		CA667AFC2C4936CB007E8F87 /* VolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA667AFB2C4936CB007E8F87 /* VolumeView.swift */; };
 		CA667AFE2C49370E007E8F87 /* KeyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA667AFD2C49370E007E8F87 /* KeyButton.swift */; };
 		CA667B012C4937B7007E8F87 /* KeyButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA667B002C4937B7007E8F87 /* KeyButtonRow.swift */; };
 		CA667B032C4937E2007E8F87 /* KeyButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA667B022C4937E2007E8F87 /* KeyButtonGroup.swift */; };
@@ -198,7 +197,6 @@
 		CA667AF52C49361C007E8F87 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		CA667AF72C493655007E8F87 /* PlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackView.swift; sourceTree = "<group>"; };
 		CA667AF92C493696007E8F87 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
-		CA667AFB2C4936CB007E8F87 /* VolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeView.swift; sourceTree = "<group>"; };
 		CA667AFD2C49370E007E8F87 /* KeyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyButton.swift; sourceTree = "<group>"; };
 		CA667B002C4937B7007E8F87 /* KeyButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyButtonRow.swift; sourceTree = "<group>"; };
 		CA667B022C4937E2007E8F87 /* KeyButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyButtonGroup.swift; sourceTree = "<group>"; };
@@ -495,7 +493,6 @@
 				CA667AF52C49361C007E8F87 /* NavigationView.swift */,
 				CA667AF72C493655007E8F87 /* PlaybackView.swift */,
 				CA667AF92C493696007E8F87 /* PreferencesView.swift */,
-				CA667AFB2C4936CB007E8F87 /* VolumeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -776,7 +773,6 @@
 				CA667AEA2C493548007E8F87 /* KeyButtonType.swift in Sources */,
 				CA667B0A2C4938EC007E8F87 /* PlaybackDefaultView.swift in Sources */,
 				CA667B0E2C493963007E8F87 /* MainViewModel.swift in Sources */,
-				CA667AFC2C4936CB007E8F87 /* VolumeView.swift in Sources */,
 				CA667AFE2C49370E007E8F87 /* KeyButton.swift in Sources */,
 				CA667B032C4937E2007E8F87 /* KeyButtonGroup.swift in Sources */,
 				CA667AFA2C493696007E8F87 /* PreferencesView.swift in Sources */,

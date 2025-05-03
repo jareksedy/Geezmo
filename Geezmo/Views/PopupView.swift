@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PopupView: View {
-    @ObservedObject var viewModel: MainViewModel
+    var viewModel: MainViewModel
     var configuration: ToastConfiguration
     
     var body: some View {

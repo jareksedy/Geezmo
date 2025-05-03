@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainTabView: View {
     @Environment(\.scenePhase) var scenePhase
-    @EnvironmentObject var viewModel: MainViewModel
+    @State var viewModel: MainViewModel
     @State private var selection: TabSelection
 
     var body: some View {
@@ -18,15 +18,12 @@ struct MainTabView: View {
                 .tag(TabSelection.navigation)
             PlaybackView()
                 .tag(TabSelection.playback)
-            PreferencesView()
+            PreferencesView(viewModel: viewModel)
                 .tag(TabSelection.preferences)
         }
         .background(.geezmoDarkGray)
         .tabViewStyle(.verticalPage)
         .ignoresSafeArea(.all)
-        .sheet(isPresented: $viewModel.isVolumeViewPresented) {
-            VolumeView()
-        }
         .onChange(of: scenePhase) {
             switch scenePhase {
             case .active:
@@ -35,9 +32,11 @@ struct MainTabView: View {
                 break
             }
         }
+        .environment(viewModel)
     }
 
-    init(selection: TabSelection = .navigation) {
+    init(viewModel: MainViewModel, selection: TabSelection = .navigation) {
+        self.viewModel = viewModel
         self.selection = .navigation
     }
 

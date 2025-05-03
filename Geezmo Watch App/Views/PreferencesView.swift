@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PreferencesView: View {
-    @EnvironmentObject var viewModel: MainViewModel
+    @State var viewModel: MainViewModel
 
     var body: some View {
         NavigationStack {

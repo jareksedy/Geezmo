@@ -11,7 +11,7 @@ import WebOSClient
 import FirebaseAnalytics
 
 struct AppsView: View {
-    @ObservedObject var viewModel: MainViewModel
+    @State var viewModel: MainViewModel
     @State private var animateSymbol: Bool = false
     @State private var searchText = ""
     
